@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="jumbotron">
+        <form #userlogin="ngForm">
+            <div class="form-group">
+
+                <label for="nameId">Name</label>
+                <input type="text" name="name" id="nameId" class="form-control" [(ngModel)]="name" required #nameField="ngModel">
+                <span *ngIf="nameField.invalid && (nameField.touched || nameField.dirty)" style="color: red">name required</span><br>
+
+                <label for="password">Password</label>
+                <input type="password" name="password" id="Password" class="form-control" [(ngModel)]="password" required #passField="ngModel">
+                <span *ngIf="passField.invalid && (passField.touched || passField.dirty)" style="color: red;">password required</span><br>
+
+                <label for="emailId">Email</label>
+                <input type="text" name="email" id="emailId" class="form-control" [(ngModel)]="email" required #emailField="ngModel">
+                <span *ngIf="emailField.invalid && (emailField.touched || emailField.dirty)" style="color: red;">email required</span><br>
+
+                <!--<label for="mobileId">Mobile No</label>
+                <input type="number" name="mobile" id="mobileId" class="form-control" [(ngModel)]="mobile" required #mobileField="ngModel">
+                <span *ngIf="mobileField.invalid && (mobileField.touched || mobileField.dirty)" style="color: red;">mobile number required</span><br>
+
+                <label for="countryId">Country</label>
+                <input type="text" name="country" id="countryId" class="form-control" [(ngModel)]="country" required #countryField="ngModel">
+                <span *ngIf="countryField.invalid && (countryField.touched || countryField.dirty)" style="color: red;">country required</span><br>
+
+                <label for="cityId">City</label>
+                <input type="text" name="city" id="cityId" class="form-control" [(ngModel)]="city" required #cityField="ngModel">
+                <span *ngIf="cityField.invalid && (cityField.touched || cityField.dirty)" style="color: red;">city required</span><br>
+
+                <label for="textareaId">Textarea</label>
+                <textarea type="text" name="textarea" id="textareaId" class="form-control" [(ngModel)]="textarea" required #textareaField="ngModel"></textarea>
+                <span *ngIf="textareaField.invalid && (textareaField.touched || textareaField.dirty)" style="color: red;">textarea required</span><br> -->
+
+                <div class="text-center">
+                    <button class="btn btn-success" (click)="Submit (userlogin.value)" [disabled]="!userlogin.valid">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

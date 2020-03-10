@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="jumbotron">
+        <form #userlogin="ngForm">
+            <div class="form-group">
+
+                <label for="nameId">Name</label>
+                <input type="text" name="name" id="nameId" class="form-control" [(ngModel)]="name" required #nameField="ngModel">
+                <span *ngIf="nameField.invalid && (nameField.touched || nameField.dirty)" style="color: red">name required</span><br>
+
+                <label for="password">Password</label>
+                <input type="password" name="password" id="Password" class="form-control" [(ngModel)]="password" required #passField="ngModel">
+                <span *ngIf="passField.invalid && (passField.touched || passField.dirty)" style="color: red;">password required</span><br>
+                
+                
+                <div class="text-center">
+                    <button class="btn btn-success" (click)="move(userlogin.value)" [disabled]="!userlogin.valid">Submit</button>
+                    <button (click)="move1()">Register</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
