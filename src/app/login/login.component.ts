@@ -15,7 +15,9 @@ export class LoginComponent implements OnInit {
 
   constructor(private router:Router,private service:CommonService) { }
 
-  ngOnInit(){  }
+  ngOnInit(){ 
+    this.getData()
+   }
 
    login(){
     this.obj={
@@ -29,6 +31,11 @@ export class LoginComponent implements OnInit {
       }else{
         alert(data['message'])
       }
+    })
+  }
+  getData(){
+    this.service.getData().subscribe(data=>{
+      console.log(data)
     })
   }
 

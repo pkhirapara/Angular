@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonService } from '../common.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -15,11 +16,19 @@ export class DashboardComponent implements OnInit {
   city:any;
   textarea:any;
 
-  constructor() { }  
+  constructor(private service:CommonService) { }  
 
-  ngOnInit() { }
+  ngOnInit() { 
+    this.getData()
+  }
 
   Submit(data: any){
     console.log(data)
+  }
+
+  getData(){
+    this.service.getData().subscribe(data=>{
+      console.log(data)
+    })
   }
 }

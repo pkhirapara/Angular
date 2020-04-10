@@ -19,4 +19,7 @@ export class CommonService{
   login(obj:any){
     return this.httpClient.post("http://localhost:3000/login",obj)
   }
+  getData(){
+    return this.httpClient.get("http://localhost:3000/getData")
+  }
 }
