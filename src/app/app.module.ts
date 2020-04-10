@@ -10,6 +10,7 @@ import { FormComponent } from './form/form.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { AppRoutingModule } from './app-routing.module';
+import { ArraymethodComponent } from './arraymethod/arraymethod.component';
 
 @NgModule({
   declarations: [
@@ -17,12 +18,13 @@ import { AppRoutingModule } from './app-routing.module';
     DashboardComponent,
     FormComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ArraymethodComponent
   ],
   imports: [
     BrowserModule,FormsModule,HttpClientModule,AppRoutingModule
   ],
   providers: [CommonService],
-  bootstrap: [DashboardComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

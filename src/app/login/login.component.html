@@ -1,23 +1,28 @@
 <div class="container">
     <div class="jumbotron">
-        <form #userlogin="ngForm">
-            <div class="form-group">
-
-                <label for="nameId">Name</label>
-                <input type="text" name="name" id="nameId" class="form-control" [(ngModel)]="name" required #nameField="ngModel">
-                <span *ngIf="nameField.invalid && (nameField.touched || nameField.dirty)" style="color: red">name required</span><br>
-
-                <label for="password">Password</label>
-                <input type="password" name="password" id="Password" class="form-control" [(ngModel)]="password" required #passField="ngModel">
-                <span *ngIf="passField.invalid && (passField.touched || passField.dirty)" style="color: red;">password required</span><br>
-                
-                
-                <div class="text-center">
-                    <button class="btn btn-success" (click)="move(userlogin.value)" [disabled]="!userlogin.valid">Submit</button>
-                    <button (click)="move1()">Register</button>
-                </div>
-            </div>
-        </form>
+      <form  #form="ngForm">
+  
+        <div class="form-group">
+          <label for="password">username</label>
+          <input type="text" name="username" id="username" [(ngModel)]="username"class="form-control" #usernameType="ngModel" required>
+          <span class="help-block" *ngIf="usernameType.errors?.required && usernameType.touched" style="color: tomato;" >
+            username  is required
+          </span>
+        </div>
+        
+        <div class="form-group">
+          <label for="password">password</label>
+          <input type="password" name="password" id="password" [(ngModel)]="password" class="form-control" #passwordType="ngModel" required>
+          <span class="help-block" *ngIf="passwordType.errors?.required && passwordType.touched" style="color: tomato;">
+            password  is required
+          </span>
+        </div>       
+  
+        <div class="text text-center">
+          <button class="btn btn-primary" [disabled]="!form.valid"> Submit </button>
+        </div>
+        <a [routerLink]="['/register']" routerLinkActive="router-link-active" >Click</a>
+      </form>
     </div>
-</div>
-
+    </div>
+  

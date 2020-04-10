@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router} from "@angular/router";
+import {CommonService} from "../common.service";
 
 @Component({
   selector: 'app-login',
@@ -8,17 +9,34 @@ import { Router} from "@angular/router";
 })
 export class LoginComponent implements OnInit {
   
-  constructor(private router: Router) { }
+  username:any;
+  password:any;
+  obj:any;
 
-  ngOnInit(): void {
-  }
+  constructor(private router:Router,private service:CommonService) { }
 
-  move(data: any){
-    this.router.navigate(['/dashboard'])
-  }
+  ngOnInit(){  }
 
-  move1(){
-    this.router.navigate(['/register'])
+   login(){
+    this.obj={
+      username:this.username,
+      password:this.password
+    }
+    this.service.login(this.obj).subscribe(data=>{
+      console.log(data)
+      if(data['status']){
+        this.router.navigate(['dashboard'])
+      }else{
+        alert(data['message'])
+      }
+    })
   }
 
 }
+
+/*
+sessStorage store value in key pair
+setItem() has two parameter
+1,key
+2,value
+*/

@@ -1,0 +1,46 @@
+<html>
+
+    <script>
+        var arr=[10,20,30,7656565765,987987876786788,787667,4,99,33]
+        console.log(arr.sort(function(a, b){return a-b}));
+     
+        //expected output is [4,10,20,30,33,787667,7656565765,987987876786788];
+
+
+        //var str=new String("welcome to javascript");
+        function reverse1(str){
+        var  len = str.length, result = "";
+        for(var i = 0; i <= len-1; i++){
+            result = result + str[len-i-1];
+        }
+        return result;
+        }
+        var str = "welcome to javascript";
+        str = reverse1(str);
+        console.log(str);
+
+        //console.log(str.split("").reverse().join(""));
+        //without using inbuilt function
+        //expected out put is tpircsavaj ot emoclew; 
+
+        var numArray = [10,20,11,3,9,31,41,71,73,93,100,80]
+        numArray = numArray.filter((number) => {
+        for (var i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i === 0) return false;
+        }
+        return true;
+        });
+        var newarr = numArray;
+        console.log(newarr.sort(function(a, b){return a-b}));
+        document.write(newarr);
+
+        const oddNumbers = [10,20,11,3,9,31,41,71,73,93,100,80].filter((number) => number%2==0);
+        console.log(oddNumbers);
+
+         
+
+        ////var arr2=[10,20,11,3,9,31,41,71,73,93,100,80]
+        //filter the array and count how many numbers are prime number and list of prime number
+        // filter the array and count how many numbers are odd or how many numbers are even list of odd and even numbers
+    </script>
+</html>
