@@ -19,9 +19,9 @@
         </div>       
   
         <div class="text text-center">
-          <button class="btn btn-primary" [disabled]="!form.valid"> Submit </button>
+          <button class="btn btn-primary" (click)="login()" [disabled]="!form.valid"> Submit </button>
         </div>
-        <a [routerLink]="['/register']" routerLinkActive="router-link-active" >Click</a>
+        <a [routerLink]="['/register']" routerLinkActive="router-link-active">Click (Go to Register)</a>
       </form>
     </div>
     </div>
