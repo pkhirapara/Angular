@@ -22,4 +22,10 @@ export class CommonService{
   getData(){
     return this.httpClient.get("http://localhost:3000/getData")
   }
+  edit(obj:any){
+    return this.httpClient.post("http://localhost:3000/update",obj)
+  }
+  deleteData(obj:any){
+    return this.httpClient.post("http://localhost:3000/delete",obj)
+  }
 }
